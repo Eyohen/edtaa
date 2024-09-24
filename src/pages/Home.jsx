@@ -270,7 +270,7 @@ const Home = () => {
     <button className='bg-blue-900 text-white flex justify-center items-center px-4 py-1 mt-12 rounded-2xl'>Get details <MdOutlineArrowRight size={25} color='white' /></button>
 </div>
 
-<img src={rewiring} className='w-[900px]'/>
+<img src={rewiring} className='w-[800px] h-[500px]'/>
 
 
 {/* </div> */}
