@@ -74,7 +74,7 @@ const Home = () => {
 
       <main>
 
-         <div className="relative h-[50vh] md:h-[70vh]">
+         <div className="relative h-[50vh] md:h-[75vh]">
 
 
           {slides.map((slide, index) => (
@@ -90,7 +90,7 @@ const Home = () => {
               }}
             >
                 
-        <div className='hidden md:block absolute inset-0 z-50 text-white right-[-550px] transform translate-x-1/2 mt-2'>
+        <div className='hidden md:block absolute inset-0 z-50 text-white right-[-450px] transform translate-x-1/2 mt-2'>
             <div className='w-[570px]'>
             <div className='flex items-center gap-x-2 justify-end'>
         <p className='text-white'>Careers</p>
