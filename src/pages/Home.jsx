@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import hero1 from '../assets/hero1.png'
 import hero2 from '../assets/hero2.png'
@@ -55,6 +55,16 @@ const Home = () => {
     setCurrentSlide(index);
   }
 
+  // Auto-advance slides
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(timer);
+  }, [currentSlide]);
+
+
   return (
     <div className="h-[100vh]">
   <header className="bg-white shadow-md p-4 md:hidden">
@@ -74,7 +84,7 @@ const Home = () => {
 
       <main>
 
-         <div className="relative h-[50vh] md:h-[75vh]">
+         <div className="relative h-[50vh] md:h-[70vh]">
 
 
           {slides.map((slide, index) => (
@@ -92,7 +102,7 @@ const Home = () => {
                 
         <div className='hidden md:block absolute inset-0 z-50 text-white mt-4'>
           
-          <div className='flex justify-between px-48'>
+          <div className='flex justify-between px-[150px]'>
             <img src={logo} className='object-contain'/>
 
          <div>
@@ -118,18 +128,10 @@ const Home = () => {
         </div>
 
           </div>
-          
-
-        
-        
         </div>
-              {/* <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-start px-48 pt-48 text-white">
-                <h1 className="text-6xl font-bold mb-4">{slide.title}</h1>
-                <p className="text-5xl font-semibold mb-4 max-w-[800px]">{slide.subtitle}</p>
-                <h1 className="text-2xl mb-4 max-w-[800px]">{slide.text}</h1>
-                <button className='bg-blue-950 w-[140px] rounded-lg flex gap-x-2 text-white py-2 px-4'>About Us <IoArrowForwardOutline size={25} color='white'/></button>
-              </div> */}
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-start px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48 pt-16 sm:pt-24 md:pt-32 lg:pt-40 xl:pt-48 text-white">
+
+              {/* <div className="absolute inset-0 bg-black bg-opacity-50 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48 pt-16 sm:pt-24 md:pt-32 lg:pt-40 xl:pt-48 text-white"> */}
+                   <div className="absolute inset-0 bg-black bg-opacity-50 px-4 md:px-[150px] pt-16 md:pt-[170px] text-white">
   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-4">{slide.title}</h1>
   <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-2 sm:mb-3 md:mb-4 max-w-[800px]">{slide.subtitle}</p>
   <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 max-w-[800px]">{slide.text}</h2>
@@ -143,19 +145,19 @@ const Home = () => {
           ))}
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full"
+            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full z-50"
           >
             <FaChevronLeft className="text-2xl" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full"
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full z-50"
           >
             <FaChevronRight className="text-2xl" />
           </button>
           
           {/* Dot navigation */}
-          <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-x-6 justify-center'>
+          <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-x-6 justify-center z-50'>
             {slides.map((_, index) => (
               <button
                 key={index}
@@ -173,7 +175,7 @@ const Home = () => {
         </div>
 
        <div className='px-4 md:px-48'>
-            <div className='flex gap-x-5 mt-24 items-center'><div className='bg-black h-[60px] w-[5px]'></div><p className='font-medium text-xl'>Solutions built for you</p></div>
+            <div className='flex gap-x-5 mt-24 items-center'><div className='bg-black h-[50px] w-[5px]'></div><p className='font-medium text-xl'>Solutions built for you</p></div>
             
 
             <div className='grid md:grid-cols-2 mt-6 gap-x-9 gap-y-9'>
