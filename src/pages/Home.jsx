@@ -16,7 +16,7 @@ import rewiring from '../assets/rewiring.png';
 import { MdOutlineArrowRight } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
-
+import logo from '../assets/logo.png'
 
 const slides = [
   {
@@ -90,8 +90,13 @@ const Home = () => {
               }}
             >
                 
-        <div className='hidden md:block absolute inset-0 z-50 text-white right-[-450px] transform translate-x-1/2 mt-2'>
-            <div className='w-[570px]'>
+        <div className='hidden md:block absolute inset-0 z-50 text-white mt-4'>
+          
+          <div className='flex justify-between px-48'>
+            <img src={logo} className='object-contain'/>
+
+         <div>
+                        <div className='w-[570px]'>
             <div className='flex items-center gap-x-2 justify-end'>
         <p className='text-white'>Careers</p>
         <p className='border-r-2 border-white w-2 h-4'></p>
@@ -109,8 +114,12 @@ const Home = () => {
         <p className='flex items-center gap-x-2'>MICROSOFT<IoIosArrowDown /></p>
         <p className='flex items-center gap-x-2'>RESOURCES<IoIosArrowDown /></p>
         <p className='flex items-center gap-x-2'>CAREER<IoIosArrowDown /></p>
-
+</div>
         </div>
+
+          </div>
+          
+
         
         
         </div>
@@ -231,11 +240,18 @@ const Home = () => {
             </div>
 
             {/* what our customers say */}
-            <div className='bg-black py-8 md:py-12 px-4 md:px-6'>
+          
+
+
+
+
+       </div>
+
+         <div className='bg-black py-8 md:py-12 px-4 md:px-6'>
 
                 <p className='text-center text-white font-semibold text-3xl'>What our Customers say</p>
 
-<div className='flex flex-col md:flex-row justify-center mt-16 gap-y-4 md:gap-y-0'>
+<div className='flex flex-col md:flex-row justify-center mt-16 gap-x-0 md:gap-x-[150px] gap-y-4 md:gap-y-0'>
 
                 <div>
                     <p className='text-white'>Head Manager, Skyline Systems</p>
@@ -252,7 +268,6 @@ const Home = () => {
                     <div className='bg-gray-600 flex justify-center items-center w-[35px] h-[35px] px-2'><IoArrowForwardOutline size={25} color='white'/></div>
                     </div>
 
-
                 </div>
 
                 </div>
@@ -261,29 +276,23 @@ const Home = () => {
              <div className='bg-black'>
 
 
-
 <div className='flex flex-col md:flex-row gap-y-4 md:gap-y-0 justify-center items-center'>
 
 <div className='px-9'>
-    <p className='text-white text-5xl font-semibold'>Rewiring and helping businesses with Intelligent AI</p>
-    <p className='text-lg text-white max-w-[600px] mt-9'>To innovate and compete, enterprises must strategically rewire the business for an AI-enabled future.</p>
+    <p className='text-white text-5xl font-semibold max-w-[500px]'>Rewiring and helping businesses with Intelligent AI</p>
+    <p className='text-lg text-white max-w-[550px] mt-9'>To innovate and compete, enterprises must strategically rewire the business for an AI-enabled future.</p>
     <button className='bg-blue-900 text-white flex justify-center items-center px-4 py-1 mt-12 rounded-2xl'>Get details <MdOutlineArrowRight size={25} color='white' /></button>
 </div>
 
 <img src={rewiring} className='w-[800px] h-[500px]'/>
 
 
-{/* </div> */}
+
 
 </div>
 
 </div>
 
-
-
-
-
-       </div>
 
 
 
