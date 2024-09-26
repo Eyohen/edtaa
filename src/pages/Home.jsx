@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import hero1 from '../assets/hero1.png'
 import hero2 from '../assets/hero2.png'
@@ -12,11 +12,12 @@ import Footer from '../components/Footer';
 import { TbPlayerPauseFilled } from "react-icons/tb";
 import { IoArrowBackSharp, IoArrowForwardOutline } from "react-icons/io5";
 import { GoDotFill, GoDot } from "react-icons/go";
-import rewiring from '../assets/rewiring.png';
+import rewiring from '../assets/shakinghands.png';
 import { MdOutlineArrowRight } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import logo from '../assets/logo.png'
+import ResourceDropDown from '../components/ResourceDropDown';
 
 const slides = [
   {
@@ -42,6 +43,17 @@ const slides = [
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isResourceHovered, setIsResourceHovered] = useState(false);
+  const resourceDropdownRef = useRef(null);
+
+  const handleResourceMouseEnter = () => {
+    setIsResourceHovered(true);
+  };
+
+  const handleResourceMouseLeave = () => {
+    setIsResourceHovered(false);
+  };
+
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -122,7 +134,22 @@ const Home = () => {
         <p className='flex items-center gap-x-2'>ABOUT US<IoIosArrowDown /></p>
         <p>SAP</p>
         <p className='flex items-center gap-x-2'>MICROSOFT<IoIosArrowDown /></p>
-        <p className='flex items-center gap-x-2'>RESOURCES<IoIosArrowDown /></p>
+
+        <div 
+                    className='relative'
+                    onMouseEnter={handleResourceMouseEnter}
+                    onMouseLeave={handleResourceMouseLeave}
+                    ref={resourceDropdownRef}
+                  >
+        <p className='flex items-center gap-x-2 cursor-pointer'>RESOURCES<IoIosArrowDown /></p>
+
+        {isResourceHovered && (
+                      <div className="absolute top-full left-0p-4 shadow-md z-50">
+                        <ResourceDropDown />
+                      </div>
+                    )}
+                  </div>
+
         <p className='flex items-center gap-x-2'>CAREER<IoIosArrowDown /></p>
 </div>
         </div>
@@ -130,7 +157,6 @@ const Home = () => {
           </div>
         </div>
 
-              {/* <div className="absolute inset-0 bg-black bg-opacity-50 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48 pt-16 sm:pt-24 md:pt-32 lg:pt-40 xl:pt-48 text-white"> */}
                    <div className="absolute inset-0 bg-black bg-opacity-50 px-4 md:px-[150px] pt-16 md:pt-[170px] text-white">
   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-4">{slide.title}</h1>
   <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-2 sm:mb-3 md:mb-4 max-w-[800px]">{slide.subtitle}</p>
@@ -155,8 +181,7 @@ const Home = () => {
           >
             <FaChevronRight className="text-2xl" />
           </button>
-          
-          {/* Dot navigation */}
+
           <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-x-6 justify-center z-50'>
             {slides.map((_, index) => (
               <button
