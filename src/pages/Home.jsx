@@ -193,13 +193,13 @@ const Home = () => {
             onClick={prevSlide}
             className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full z-50"
           >
-            <FaChevronLeft className="text-2xl" />
+            <FaChevronLeft size={10} className="text-2xl" />
           </button>
           <button
             onClick={nextSlide}
             className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full z-50"
           >
-            <FaChevronRight className="text-2xl" />
+            <FaChevronRight  size={10} className="text-2xl" />
           </button>
 
           <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center z-50'>
@@ -210,9 +210,9 @@ const Home = () => {
                 className="focus:outline-none"
               >
                 {index === currentSlide ? (
-                  <GoDotFill size={30} color='white' />
+                  <GoDotFill size={20} color='white' />
                 ) : (
-                  <GoDot size={30} color='white' className="opacity-50 hover:opacity-100 transition-opacity" />
+                  <GoDot size={20} color='white' className="opacity-50 hover:opacity-100 transition-opacity" />
                 )}
               </button>
             ))}
