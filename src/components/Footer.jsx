@@ -1,5 +1,5 @@
 import React from 'react'
-import logo2 from '../assets/logo2.png'
+import footerlogo from '../assets/footerlogo.png'
 import headset from '../assets/headset.png'
 import email from '../assets/email.png'
 import chat from '../assets/chat.png'
@@ -17,7 +17,7 @@ const Footer = () => {
         <div className='flex flex-col md:flex-row gap-y-4 md:gap-y-0 justify-center gap-x-24'>
 
         <div>
-<img src={logo2} className='object-contain'/>
+<img src={footerlogo} className='object-contain'/>
 
 <div className='flex gap-x-4 mt-5'><img src={headset} className='object-contain mb-[40px]' />
 <div>

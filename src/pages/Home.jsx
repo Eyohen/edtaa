@@ -3,6 +3,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import hero1 from '../assets/hero1.png'
 import hero2 from '../assets/hero2.png'
 import hero3 from '../assets/hero3.png'
+import hero4 from '../assets/hero4.png'
 import gzi from '../assets/gzi.png'
 import recruiters from '../assets/recruiters.png'
 import onf from '../assets/ONF.jpg'
@@ -14,7 +15,7 @@ import { IoArrowBackSharp, IoArrowForwardOutline } from "react-icons/io5";
 import { GoDotFill, GoDot } from "react-icons/go";
 import rewiring from '../assets/shakinghands.png';
 import { MdOutlineArrowRight } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import logo from '../assets/logo.png'
 import ResourceDropDown from '../components/ResourceDropDown';
@@ -24,19 +25,36 @@ const slides = [
     title: "EDTAA",
     subtitle: "Transforming the world's business",
     text: "Driving global growth through ours' only advanced technology and unparalleled expertise.",
-    image: hero1
+    image: hero1,
+    button: "About Us"
   },
   {
     title: "Supercharging with SAP",
     subtitle: "Elevate Your Efficiency and Innovate Faster with SAP Solutions",
     text:"Unlock the full potential of your business with SAP. Seamlessly streamline operations, boost productivity, and stay ahead of the competition. Experience the power of SAP today!",
-    image: hero2
+    image: hero2,
+    button: "Explore"
   },
   {
     title: "The Digital Powerhouse",
     subtitle: "Revolutionize Your Business Today",
     text:"Unlock unparalleled growth and efficiency with our leading-edge digital transformation solutions. Harness the power of AI, cloud, and automation to drive your business forward forward. Experience the future, now.",
-    image: hero3
+    image: hero3,
+    button: "Get Started"
+  },
+  {
+    title: "Retail Revolution with AI from Chaos to Clarity - 30% Efficiency Boost!",
+    // subtitle: "Elevate Your Efficiency and Innovate Faster with SAP Solutions",
+    text:"Showing the world how we helped a major retailer transform their operations with AI. Imagine cutting inventory errors, speeding up supply chains, and making customer happier than ever. In just six months, they saw a 30% efficiency jump and a 25% sales surge!",
+    image: hero4,
+    button:"Explore Journey"
+  },
+  {
+    title: "Become the E in EDTAA Join Us in Shaping the Future of Technology",
+    // subtitle: "Revolutionize Your Business Today",
+    text:"Embrace the opportunity to work with a team of innovators and visionaries. At our company, you'll drive impactful digital transformation projects, collaborate with top-tier professionals, and contribute to cutting-edge solutions that redefine industries. Your journey to making a difference starts here.",
+    image: hero3,
+    button:"Join Our Team"
   }
 ];
 
@@ -68,13 +86,13 @@ const Home = () => {
   }
 
   // Auto-advance slides
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 3000); // Change slide every 3 seconds
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       nextSlide();
+//     }, 3000); // Change slide every 3 seconds
 
-    return () => clearInterval(timer);
-  }, [currentSlide]);
+//     return () => clearInterval(timer);
+//   }, [currentSlide]);
 
 
   return (
@@ -96,7 +114,7 @@ const Home = () => {
 
       <main>
 
-         <div className="relative h-[50vh] md:h-[70vh]">
+         <div className="relative h-[50vh] md:h-[90vh]">
 
 
           {slides.map((slide, index) => (
@@ -141,7 +159,8 @@ const Home = () => {
                     onMouseLeave={handleResourceMouseLeave}
                     ref={resourceDropdownRef}
                   >
-        <p className='flex items-center gap-x-2 cursor-pointer'>RESOURCES<IoIosArrowDown /></p>
+        <p className='flex items-center gap-x-2 cursor-pointer'>RESOURCES {isResourceHovered ? <IoIosArrowUp/> : <IoIosArrowDown />}</p>
+    
 
         {isResourceHovered && (
                       <div className="absolute top-full left-0p-4 shadow-md z-50">
@@ -158,11 +177,11 @@ const Home = () => {
         </div>
 
                    <div className="absolute inset-0 bg-black bg-opacity-50 px-4 md:px-[150px] pt-16 md:pt-[170px] text-white">
-  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-4">{slide.title}</h1>
+  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 max-w-[800px]">{slide.title}</h1>
   <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-2 sm:mb-3 md:mb-4 max-w-[800px]">{slide.subtitle}</p>
   <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 max-w-[800px]">{slide.text}</h2>
-  <button className='bg-blue-950 w-[140px] rounded-lg flex items-center justify-center gap-x-2 text-white py-2 px-4 text-sm sm:text-base'>
-    About Us 
+  <button className='bg-blue-950 w-[190px] font-medium rounded-lg flex items-center justify-center gap-x-2 text-white py-2 px-2 text-sm sm:text-base'>
+    {slide.button} 
     <IoArrowForwardOutline size={20} color='white'/>
   </button>
 </div>
