@@ -86,13 +86,13 @@ const Home = () => {
   }
 
   // Auto-advance slides
-//   useEffect(() => {
-//     const timer = setInterval(() => {
-//       nextSlide();
-//     }, 3000); // Change slide every 3 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 3000); // Change slide every 3 seconds
 
-//     return () => clearInterval(timer);
-//   }, [currentSlide]);
+    return () => clearInterval(timer);
+  }, [currentSlide]);
 
 
   return (
