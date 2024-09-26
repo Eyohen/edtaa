@@ -2,8 +2,8 @@ import React from 'react'
 
 const ResourceDropDown = () => {
   return (
-    <div className='fixed inset-0 flex mt-[110px]  h-[600px] z-50'>
-    <div className='bg-black w-full max-w-full mx-auto py-12 px-4'>
+    <div className='fixed inset-0 flex mt-[110px]  h-[500px] z-50'>
+    <div className='bg-black w-full max-w-full mx-auto py-6 px-4'>
         <p className='font-semibold text-white text-4xl underline px-[125px]'>Resources</p>
       <div className='flex justify-evenly text-white mt-9'>
         {/* Your existing content */}
