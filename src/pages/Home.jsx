@@ -4,6 +4,7 @@ import hero1 from '../assets/hero1.png'
 import hero2 from '../assets/hero2.png'
 import hero3 from '../assets/hero3.png'
 import hero4 from '../assets/hero4.png'
+import hero5 from '../assets/hero5.jpg'
 import gzi from '../assets/gzi.png'
 import recruiters from '../assets/recruiters.png'
 import onf from '../assets/ONF.jpg'
@@ -53,7 +54,7 @@ const slides = [
     title: "Become the E in EDTAA Join Us in Shaping the Future of Technology",
     // subtitle: "Revolutionize Your Business Today",
     text:"Embrace the opportunity to work with a team of innovators and visionaries. At our company, you'll drive impactful digital transformation projects, collaborate with top-tier professionals, and contribute to cutting-edge solutions that redefine industries. Your journey to making a difference starts here.",
-    image: hero3,
+    image: hero5,
     button:"Join Our Team"
   }
 ];
@@ -201,7 +202,7 @@ const Home = () => {
             <FaChevronRight className="text-2xl" />
           </button>
 
-          <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-x-6 justify-center z-50'>
+          <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center z-50'>
             {slides.map((_, index) => (
               <button
                 key={index}
